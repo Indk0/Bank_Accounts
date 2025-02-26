@@ -58,15 +58,15 @@ class BankAccount:
         print(f"Your new balance: £{self.balance:,.2f}")
 
 
-# Create an instance of BankAccount with Leofric's information
+# Object with Leofric's information
 Leofric = BankAccount('Leofric', 'Earl of Mercia', '96810571043', 'Current Account', '1040', '£3,097,576,293.76')
 
-# Display welcome message for the user
+# Display welcome message to the user
 Leofric.display_wel_mes()
 
-# Main program loop
+# Main menu code loop
 while True:
-    # Display menu options
+    # Menu options
     print('----------------------')
     print('Please choose an option:')
     print('1. View current balance')
@@ -77,11 +77,11 @@ while True:
     # Get user's choice
     choice = input('Enter your choice (1-4):')
 
-    # Handle option 1: View balance
+    # Handle option 1
     if choice == '1':
         Leofric.home()
     
-    # Handle option 2: Deposit money
+    # Handle option 2
     elif choice == '2':
         # Get deposit amount from user
         amount = float(input("Enter amount to deposit: "))
@@ -90,9 +90,9 @@ while True:
         # Display new balance
         Leofric.display()
     
-    # Handle option 3: Withdraw money with PIN verification
+    # Handle option 3
     elif choice == '3':
-        # Ask for PIN to verify identity
+        # Ask PIN for verification
         security = input('Please enter your pin to withdraw:')
         # Verify the PIN
         if security == Leofric.pin:
@@ -107,7 +107,7 @@ while True:
             # Handle incorrect PIN
             print('Incorrect PIN. Account locked please contact the bank.')
     
-    # Handle option 4: Exit the program
+    # Handle option 4
     elif choice == "4":
         # Display goodbye message
         print("Goodbye! Have a prosperous rule, Leofric.")
