@@ -7,6 +7,7 @@ class BankAccount:
         self.account_id = account_id
         self.account_type = account_type
         self.pin = pin
+
         # Convert balance from string format to float by removing currency symbol and commas
         if isinstance(balance, str):
             self.balance = float(balance.replace('£', '').replace(',', ''))
@@ -42,14 +43,39 @@ class BankAccount:
 
 
 # Initialize with the same value but it will be converted to a number
-Leofric = BankAccount('Leofric', 'Earl of Mercia', '96810571043', 'Current Account', '1040', '£3,097,576,293')
-
-
+Leofric = BankAccount('Leofric', 'Earl of Mercia', '96810571043', 'Current Account', '1040', '£3,097,576,293.76')
 
 Leofric.display_wel_mes()
-Leofric.home()
-Leofric.payments_transfers('deposit', 96)
-Leofric.payments_transfers('withdraw', 25)
 
-# Display updated balance
-Leofric.display()
+while True:
+    print('----------------------')
+    print('Please choose an option:')
+    print('1. View current balance')
+    print('2. Deposit money')
+    print('3. Withdraw money')
+    print('4. Exit')
+
+    choice = input('Enter your choice (1-4):')
+
+    if choice == '1':
+        Leofric.home()
+    
+    elif choice == '2':
+        amount = float(input("Enter amount to deposit: "))
+        Leofric.payments_transfers('deposit',amount)
+    
+    elif choice == '3':
+        security = input('Please enter your pin to withdraw:')
+        if security == Leofric.pin:
+            print('Your pin is correct.')
+            amount = float(input("Enter amount to withdraw: "))
+            Leofric.payments_transfers('withdraw', amount)
+        else:
+            print('Incorrect PIN. Account locked please contact the bank.')
+    
+    elif choice == "4":
+        print("Goodbye! Have a prosperous rule, Leofric.")
+        break
+
+    else:
+        print("Invalid choice! Please select a valid option.")
