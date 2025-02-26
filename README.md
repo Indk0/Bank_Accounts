@@ -1,11 +1,11 @@
 # Bank_Accounts
 
 ## Overview
-### This is a mini-project I have completed using the Codedex specific. I have decided to take the initial task specification and added extra features such as:
+### This is a mini-project I have completed using the Codedex specific. I have decided to take the initial task specification and add extra features such as:
 
-* Menu option
-* View, deposit and withdraw function
-* A PIN verification for withdrawals
+* Menu option.
+* View, deposit and withdraw function.
+* A PIN verification for withdrawals.
 * Messages for the user to create a banking app like experience.
 
 ### Here's what the original specification looked like:
